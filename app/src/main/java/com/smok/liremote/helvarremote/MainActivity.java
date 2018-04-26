@@ -30,14 +30,14 @@ public class MainActivity extends AppCompatActivity {
     public class TransmitClicker implements View.OnClickListener {
 
         int[] pattern;
-        public TransmitClicker(int[] pattern) {
+        TransmitClicker(int[] pattern) {
             this.pattern = pattern;
         }
 
         @Override
         public void onClick(View v) {
             if (!mCIR.hasIrEmitter()) {
-                Toast.makeText(MainActivity.this,"No IR Emitter found", 500);
+                Toast.makeText(MainActivity.this,"No IR Emitter found", Toast.LENGTH_LONG).show();
                 return;
             }
             // transmit the pattern at 38.4KHz
